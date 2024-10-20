@@ -1,0 +1,30 @@
+android {
+    namespace = "com.example.teste"
+    compileSdk = 34 // Atualizado para a versão 34.
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId = "com.example.teste"
+        minSdk = 23 // Garantindo que a versão mínima seja 23 para compatibilidade com biometria.
+        targetSdk = 34 // Atualizado para a versão 34.
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
